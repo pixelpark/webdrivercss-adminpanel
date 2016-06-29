@@ -9,3 +9,6 @@ dist
 repositories
 
 npm-debug.log
+
+## IDE files
+.idea
