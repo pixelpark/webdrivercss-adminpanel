@@ -38,7 +38,7 @@ exports.syncImages = function(req, res) {
                 }
 
                 new targz().extract(newPath, imageRepo);
-                res.send(200);
+                res.sendStatus(200);
             });
 
         });
@@ -103,7 +103,7 @@ exports.getImage = function(req, res) {
              * check if requested file exists
              * return 404 if file doesn't exist otherwise send file content
              */
-            res.sendfile(filepath, {}, function(err) {
+            res.sendFile(filepath, {}, function(err) {
                 if (err) {
                     return res.send(404);
                 }
@@ -138,7 +138,7 @@ exports.downloadRepository = function(req, res) {
          */
         function(isExisting, done) {
             if (!isExisting) {
-                return res.send(404);
+                return res.sendStatus(404);
             }
 
             return glob(projectPath + '/**/*.baseline.png', done);
@@ -169,7 +169,7 @@ exports.downloadRepository = function(req, res) {
             return res.send(500);
         }
 
-        res.sendfile(tarPath);
+        res.sendFile(tarPath);
 
         /**
          * delete tmp directory
