@@ -16,7 +16,7 @@ var fs = require('fs-extra'),
     targz = require('tar.gz'),
     async = require('async'),
     readDir = require('../utils/readDir'),
-    imageRepo = path.join(__dirname, '..', '..', '..', 'repositories');
+    imageRepo = path.join(__dirname, '..', '..', 'repositories');
 
 exports.syncImages = function(req, res) {
 
@@ -37,7 +37,7 @@ exports.syncImages = function(req, res) {
                     throw (err);
                 }
 
-                new targz().extract(newPath, imageRepo);
+                new targz().extract(newPath, imageRepo); // jshint ignore:line
                 res.sendStatus(200);
             });
 
@@ -161,7 +161,7 @@ exports.downloadRepository = function(req, res) {
          * zip cleared
          */
         function(res, done) {
-            return new targz().compress(tmpPath, tarPath, done);
+            return new targz().compress(tmpPath, tarPath, done); // jshint ignore:line
         }
     ], function(err) {
 
@@ -190,10 +190,10 @@ exports.acceptDiff = function(req, res) {
     client is actually .regression.png
     */
 
-    var imageName = req.body.file.split(".new.png")[0],
-        newFile = imageName + ".regression.png",
-        currentFile = imageName + ".baseline.png",
-        diffFile = imageName + ".diff.png",
+    var imageName = req.body.file.split('.new.png')[0],
+        newFile = imageName + '.regression.png',
+        currentFile = imageName + '.baseline.png',
+        diffFile = imageName + '.diff.png',
         project = null,
         processed = 0;
 

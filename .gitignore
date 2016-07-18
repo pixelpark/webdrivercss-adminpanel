@@ -5,8 +5,8 @@ public
 app/bower_components
 heroku
 /views
-dist
-repositories
+dist/*
+!dist/repositories
 
 npm-debug.log
 
