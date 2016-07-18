@@ -1,5 +1,5 @@
 {
-  "name": "webdrivercssadminpanel",
+  "name": "webdrivercss-adminpanel",
   "version": "0.0.0",
   "dependencies": {
     "async": "^1.5.2",
