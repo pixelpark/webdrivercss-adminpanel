@@ -1,5 +1,5 @@
 {
-  "name": "webdrivercssadminpanel",
+  "name": "webdrivercss-adminpanel",
   "version": "0.0.0",
   "dependencies": {
     "async": "^1.5.2",
@@ -59,7 +59,7 @@
   },
   "scripts": {
     "postinstall": "bower install",
-    "test": "grunt test",
-    "start": "grunt serve:dist"
+    "test": "./node_modules/grunt-cli/bin/grunt test",
+    "start": "./node_modules/grunt-cli/bin/grunt serve:dist"
   }
 }
