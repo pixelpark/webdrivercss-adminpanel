@@ -59,7 +59,7 @@
   },
   "scripts": {
     "postinstall": "bower install",
-    "test": "grunt test",
-    "start": "grunt serve:dist"
+    "test": "./node_modules/grunt-cli/bin/grunt test",
+    "start": "./node_modules/grunt-cli/bin/grunt serve:dist"
   }
 }
