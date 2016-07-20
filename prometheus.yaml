@@ -1,0 +1,23 @@
+---
+name: 'webdrivercss-adminpanel'
+version: '0.0.1'
+
+apps:
+  - name: 'node-server'
+    resources: 'small'
+    image: 'registry.prometheus.pixelpark.net:5000/webdrivercss-adminpanel:latest'
+    volumes:
+      - containerPath: '/home/lion/app/repositories'
+        hostPath:  '/srv/mesos/shared/selenium'
+        mode: 'RW'
+    portMappings:
+     - containerPort: 3000
+       protocol: tcp
+    healthChecks:
+      - path: "/"
+        portIndex: 0
+        protocol: "HTTP"
+        gracePeriodSeconds: 300
+        intervalSeconds: 10
+        timeoutSeconds: 20
+        maxConsecutiveFailures: 3
