@@ -17,7 +17,7 @@ RUN npm install
 # Bundle app source
 COPY . /home/$CONTAINER_USER/app
 
-VOLUME /home/$CONTAINER_USER/app/repositories
+#VOLUME /home/$CONTAINER_USER/app/repositories
 
 EXPOSE 3000
 ENTRYPOINT [ "npm", "start" ]
