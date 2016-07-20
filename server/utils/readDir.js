@@ -65,7 +65,7 @@ module.exports = function (start, callback) {
                         // get diffs
                         listDirectory(path.join(start,dir,'diff'), function(err,structure) {
 
-                            files.repositories[dir].diffs = structure.files;
+                            files.repositories[dir].diffs = (typeof structure !== 'undefined') ? structure.files : undefined;
 
                             if(++processed === projectCnt) {
                                 callback(null,files);

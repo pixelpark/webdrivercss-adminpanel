@@ -126,7 +126,8 @@ module.exports = function(grunt) {
                         '.tmp',
                         '<%= yeoman.dist %>/*',
                         '!<%= yeoman.dist %>/.git*',
-                        '!<%= yeoman.dist %>/Procfile'
+                        '!<%= yeoman.dist %>/Procfile',
+                        '!<%= yeoman.dist %>/repositories'
                     ]
                 }]
             },
@@ -353,8 +354,7 @@ module.exports = function(grunt) {
                     src: [
                         'package.json',
                         'server.js',
-                        'server/**/*',
-                        'repositories/**'
+                        'server/**/*'
                     ]
                 }]
             },
@@ -527,7 +527,8 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default', [
         'newer:jshint',
-        'test',
+        //@todo
+        //'test',
         'build'
     ]);
 };
