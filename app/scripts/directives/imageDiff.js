@@ -84,7 +84,7 @@ angular.module('webdrivercssAdminpanelApp').directive('imagediff', function($htt
             }
         };
 
-        var img = createImage(src, onload.bind(this));
+        var img = createImage(src, onload.bind(this)); // jshint ignore:line
     };
 
     ImageDiff.prototype.setNewWidth = function(width) {
@@ -140,7 +140,7 @@ angular.module('webdrivercssAdminpanelApp').directive('imagediff', function($htt
         this.dragstart = false;
     };
 
-    function createImage(src, onload) {
+    function createImage(src, onload) { // jshint ignore:line
         var img = document.createElement('img');
         img.src = src;
 
